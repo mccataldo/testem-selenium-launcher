@@ -16,9 +16,21 @@ $ npm install testem-selenium-launcher --save-dev
 {
   ...
   "launchers": {
-    "Selenium": {
+        "Chrome_iPhone7-portrait": {
       "exe": "node_modules/.bin/testem-selenium-launcher",
-      "args": ["<url>", "INSERT YOUR HUB URL", "INSERT DESIRED BROWSER (chrome|firefox|etc)"],
+      "args": [
+        "<url>",
+        "http://localhost:9515",
+        {
+          "browserName": "chrome",
+          "chromeOptions": {
+            "args": [
+              "--test-type",
+              "--window-size=414,736"
+            ]
+          }
+        }
+      ],
       "protocol": "browser"
     }
   }
